@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мағжан Жұмабаев — қазақтың ұлы ақыны</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+:root{
+  --navy-0:#040b22; --navy-1:#071436; --navy-2:#0b1f52; --navy-3:#12307a;
+  --gold:#f2c968; --gold-2:#ffe3a0; --sky:#7fd3ff; --mint:#6fe0c0; --rose:#ff8fa3;
+  --text:#e9efff; --muted:#a9b7dd; --card:rgba(255,255,255,.055); --line:rgba(242,201,104,.28);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Montserrat,system-ui,sans-serif;color:var(--text);line-height:1.65;
+  background:radial-gradient(1200px 700px at 80% -10%,#1a3a8f 0%,transparent 60%),
+             radial-gradient(900px 600px at -10% 30%,#0f2a6b 0%,transparent 60%),
+             linear-gradient(180deg,var(--navy-1),var(--navy-0) 70%);
+  background-attachment:fixed;min-height:100vh;overflow-x:hidden}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.6;animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.8)}50%{opacity:.95;transform:scale(1.3)}}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.2px}
+a{color:var(--gold)}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(4,11,34,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px;color:var(--gold);white-space:nowrap;text-decoration:none}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.links::-webkit-scrollbar{display:none}
+.links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;transition:.2s}
+.links a:hover,.links a.on{color:var(--navy-0);background:var(--gold)}
+
+/* ornament */
+.orn{height:22px;margin:10px auto 0;max-width:420px;opacity:.85;
+ background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='22' viewBox='0 0 60 22'><path d='M30 20 C30 8 18 4 14 10 C11 15 17 18 19 14 M30 20 C30 8 42 4 46 10 C49 15 43 18 41 14 M0 20 H60' fill='none' stroke='%23f2c968' stroke-width='1.6' stroke-linecap='round'/></svg>") repeat-x center/60px 22px}
+
+/* HERO */
+.hero{padding:70px 0 50px;text-align:center;position:relative}
+.hero .medal{width:170px;height:170px;margin:0 auto 22px;position:relative}
+.hero h1{font-size:clamp(44px,8vw,92px);line-height:1;margin:0;color:#fff;
+  background:linear-gradient(180deg,#fff 20%,var(--gold-2) 70%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .years{font-family:"Cormorant Garamond",serif;font-size:26px;color:var(--gold);margin:8px 0 4px;letter-spacing:4px}
+.hero .sub{font-size:17px;color:var(--muted);max-width:720px;margin:0 auto}
+.quote-hero{margin:30px auto 0;max-width:560px;padding:22px 28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,rgba(242,201,104,.10),rgba(127,211,255,.05));font-family:"Cormorant Garamond",serif;font-size:24px;font-style:italic;line-height:1.35}
+.quote-hero small{display:block;font-family:Montserrat;font-style:normal;font-size:13px;color:var(--gold);margin-top:10px}
+.goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:34px;text-align:left}
+.goal{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:16px 18px;font-size:14px}
+.goal b{color:var(--gold);display:block;font-size:13px;letter-spacing:.5px;margin-bottom:4px}
+
+/* SECTIONS */
+section{padding:64px 0;position:relative;scroll-margin-top:62px}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head .kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--sky);font-weight:700}
+.sec-head h2{font-size:clamp(34px,5vw,52px);margin:6px 0 0;color:#fff}
+.sec-head p{color:var(--muted);max-width:720px;margin:10px auto 0}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:24px;box-shadow:0 20px 50px -30px rgba(0,0,0,.8)}
+.card h3{font-size:28px;margin:0 0 8px;color:var(--gold-2)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(127,211,255,.14);color:var(--sky);margin-bottom:10px}
+.tag.g{background:rgba(242,201,104,.15);color:var(--gold)}
+.tag.m{background:rgba(111,224,192,.14);color:var(--mint)}
+.tag.r{background:rgba(255,143,163,.14);color:var(--rose)}
+
+/* TIMELINE */
+.timeline{position:relative;margin:10px auto 0;max-width:940px}
+.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),rgba(242,201,104,.1));transform:translateX(-1px)}
+.tl{position:relative;width:50%;padding:0 34px 26px}
+.tl:nth-child(odd){left:0;text-align:right}
+.tl:nth-child(even){left:50%}
+.tl:after{content:"";position:absolute;top:8px;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(242,201,104,.18),0 0 18px var(--gold)}
+.tl:nth-child(odd):after{right:-7px}
+.tl:nth-child(even):after{left:-7px}
+.tl .yr{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:700;color:var(--gold)}
+.tl .tx{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 16px;font-size:14px;display:inline-block;text-align:left}
+@media(max-width:760px){.timeline:before{left:12px}.tl,.tl:nth-child(even){width:100%;left:0;text-align:left;padding-left:40px;padding-right:0}.tl:after,.tl:nth-child(odd):after{left:5px;right:auto}}
+
+.bio p{margin:0 0 12px}
+.bio .card{margin-bottom:18px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:24px}
+.fact{text-align:center;padding:18px;border-radius:16px;background:linear-gradient(160deg,rgba(18,48,122,.6),rgba(7,20,54,.6));border:1px solid var(--line)}
+.fact .n{font-family:"Cormorant Garamond",serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1}
+.fact .l{font-size:13px;color:var(--muted)}
+.poem{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.45;padding:18px 22px;border-left:3px solid var(--gold);background:rgba(242,201,104,.06);border-radius:0 14px 14px 0;margin:12px 0}
+.poem small{display:block;font-family:Montserrat;font-size:12px;color:var(--gold);margin-top:6px}
+
+/* THEORY */
+table.th{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:16px;border:1px solid var(--line);font-size:14px}
+table.th th{background:rgba(242,201,104,.16);color:var(--gold-2);text-align:left;padding:12px 14px;font-weight:700}
+table.th td{padding:12px 14px;border-top:1px solid rgba(255,255,255,.07);vertical-align:top}
+table.th tr:nth-child(even) td{background:rgba(255,255,255,.025)}
+.pill{display:inline-block;padding:2px 9px;margin:2px;border-radius:999px;background:rgba(127,211,255,.12);color:#cfeeff;font-size:13px}
+.note{border:1px dashed rgba(127,211,255,.4);border-radius:14px;padding:14px 16px;background:rgba(127,211,255,.05);font-size:14px;margin-top:16px}
+.note b{color:var(--sky)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tabs button{all:unset;cursor:pointer;padding:9px 16px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted)}
+.tabs button.on{background:var(--gold);color:var(--navy-0);border-color:var(--gold)}
+.tabpane{display:none}.tabpane.on{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* BUTTONS & INPUTS */
+.btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#e0a93a);color:var(--navy-0);font-weight:700;font-size:14px;box-shadow:0 8px 22px -10px var(--gold);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+.btn.sky{background:linear-gradient(135deg,var(--sky),#4ca5e8);box-shadow:0 8px 22px -10px var(--sky)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.fb{margin-top:12px;font-weight:600;font-size:14px;min-height:22px}
+.ok{color:var(--mint)}.bad{color:var(--rose)}
+select,textarea,input[type=text]{font:inherit;color:var(--text);background:rgba(4,11,34,.7);border:1px solid rgba(127,211,255,.35);border-radius:10px;padding:8px 10px}
+textarea{width:100%;min-height:150px;resize:vertical}
+select option{background:#0b1f52}
+.desc{font-size:13px;background:rgba(111,224,192,.07);border:1px solid rgba(111,224,192,.25);border-radius:12px;padding:10px 14px;margin-top:14px}
+.desc b{color:var(--mint)}
+.desc ul{margin:6px 0 0;padding-left:18px}
+
+/* TASKS */
+.task{margin-bottom:26px}
+.task .num{font-family:"Cormorant Garamond",serif;font-size:64px;line-height:.8;color:rgba(242,201,104,.25);float:right}
+.listen-text{display:none;font-size:15px;background:rgba(4,11,34,.55);border-radius:14px;padding:16px 18px;margin-top:12px;border:1px solid rgba(255,255,255,.08)}
+.listen-text.show{display:block;animation:fade .4s}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{cursor:pointer;user-select:none;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:14px;transition:.2s;background:rgba(255,255,255,.03)}
+.chip.sel{background:var(--gold);color:var(--navy-0);border-color:var(--gold)}
+.chip.right{background:var(--mint);color:var(--navy-0);border-color:var(--mint)}
+.chip.wrong{background:var(--rose);color:var(--navy-0);border-color:var(--rose)}
+.qa details{background:rgba(255,255,255,.04);border-radius:12px;padding:10px 14px;margin:8px 0;border:1px solid rgba(255,255,255,.07)}
+.qa summary{cursor:pointer;font-weight:600}
+.qa details p{margin:8px 0 0;color:var(--mint)}
+.opt{display:block;cursor:pointer;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);margin:8px 0;transition:.2s;font-size:14px}
+.opt:hover{border-color:var(--gold)}
+.opt.right{background:rgba(111,224,192,.18);border-color:var(--mint)}
+.opt.wrong{background:rgba(255,143,163,.15);border-color:var(--rose)}
+.fill{display:grid;gap:10px}
+.fill .s{background:rgba(255,255,255,.035);padding:10px 14px;border-radius:12px;font-size:15px}
+.fill .s .t{font-size:12px;margin-left:6px}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.counter div{text-align:center;padding:10px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:12px}
+.counter b{display:block;font-size:26px;font-family:"Cormorant Garamond",serif}
+.counter .hit{border-color:var(--mint);background:rgba(111,224,192,.12)}
+@media(max-width:600px){.counter{grid-template-columns:repeat(2,1fr)}}
+mark{background:rgba(242,201,104,.35);color:#fff;border-radius:4px;padding:0 3px}
+
+/* GAMES */
+.bank{display:flex;flex-wrap:wrap;gap:8px;min-height:50px;padding:12px;border-radius:14px;background:rgba(4,11,34,.5);border:1px dashed rgba(255,255,255,.15)}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px}
+.bin{min-height:120px;border-radius:16px;padding:12px;border:1px solid var(--line);background:rgba(242,201,104,.05);cursor:pointer;transition:.2s}
+.bin:hover{background:rgba(242,201,104,.12)}
+.bin h4{margin:0 0 8px;font-size:14px;color:var(--gold)}
+.bin .chip{cursor:default;font-size:13px;padding:5px 10px}
+.qz-prog{height:6px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:14px}
+.qz-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--gold));transition:.4s}
+.tlgame .r{display:flex;gap:10px;align-items:center;padding:8px 12px;border-radius:12px;background:rgba(255,255,255,.035);margin:6px 0;font-size:14px}
+.tlgame select{min-width:96px}
+.tlgame .r.right{outline:1px solid var(--mint)}.tlgame .r.wrong{outline:1px solid var(--rose)}
+
+/* JEOPARDY */
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.board .cat{text-align:center;font-weight:700;font-size:13px;color:var(--gold);padding:10px 6px;border-radius:12px;background:rgba(242,201,104,.1);display:flex;align-items:center;justify-content:center}
+.board .cell{cursor:pointer;text-align:center;font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:700;padding:16px 0;border-radius:14px;color:var(--gold-2);
+ background:linear-gradient(160deg,var(--navy-3),var(--navy-2));border:1px solid rgba(127,211,255,.3);transition:.2s}
+.board .cell:hover{transform:scale(1.04);box-shadow:0 0 20px rgba(127,211,255,.35)}
+.board .cell.used{opacity:.22;pointer-events:none}
+@media(max-width:600px){.board .cell{font-size:24px}.board .cat{font-size:11px}}
+.teams{display:flex;gap:14px;justify-content:center;margin:0 0 18px;flex-wrap:wrap}
+.team{min-width:170px;text-align:center;padding:12px 18px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.team input{width:100%;text-align:center;background:transparent;border:0;color:var(--gold);font-weight:700}
+.team .sc{font-family:"Cormorant Garamond",serif;font-size:44px;font-weight:700;line-height:1}
+.modal{position:fixed;inset:0;background:rgba(2,6,20,.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal.on{display:flex}
+.modal .box{max-width:640px;width:100%;background:linear-gradient(160deg,#0f2a6b,#061233);border:1px solid var(--gold);border-radius:24px;padding:30px;text-align:center;animation:fade .3s}
+.modal .q{font-family:"Cormorant Garamond",serif;font-size:30px;line-height:1.25;margin:10px 0 18px}
+.modal .a{display:none;color:var(--mint);font-size:18px;font-weight:600;margin-bottom:16px}
+.timer{font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold)}
+
+/* REFLECTION */
+.emo{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.emo button{all:unset;cursor:pointer;text-align:center;padding:14px 18px;border-radius:18px;border:1px solid rgba(255,255,255,.12);min-width:130px;transition:.2s}
+.emo button span{font-size:40px;display:block}
+.emo button.on{border-color:var(--gold);background:rgba(242,201,104,.12);transform:translateY(-3px)}
+.hand{display:grid;gap:10px;margin-top:16px}
+.hand label{display:grid;grid-template-columns:200px 1fr;gap:10px;align-items:center;font-size:14px}
+@media(max-width:600px){.hand label{grid-template-columns:1fr}}
+.refl-out{display:none;margin-top:16px}
+
+/* HOMEWORK */
+.hw .card{position:relative;overflow:hidden}
+.hw .lvl{position:absolute;right:-10px;top:-24px;font-family:"Cormorant Garamond",serif;font-size:130px;font-weight:700;color:rgba(255,255,255,.05)}
+
+/* KMZH paper */
+.kmzh-tools{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:20px}
+.paper{background:#fff;color:#111;border-radius:6px;padding:28px 30px;font-family:"Times New Roman",Times,serif;font-size:13.5px;line-height:1.4;box-shadow:0 30px 70px -30px #000;max-width:1000px;margin:0 auto}
+.paper h2{font-family:"Times New Roman",serif;text-align:center;font-size:18px;margin:0 0 4px;color:#111}
+.paper .ctr{text-align:center;margin:0 0 12px;font-size:13px}
+.paper table{width:100%;border-collapse:collapse;margin-bottom:10px}
+.paper td,.paper th{border:1px solid #333;padding:6px 7px;vertical-align:top;text-align:left}
+.paper th{background:#e9eef8;font-weight:700;text-align:center}
+.paper .lab{width:28%;font-weight:700;background:#f6f8fc}
+.paper ul{margin:3px 0;padding-left:18px}
+.paper p{margin:3px 0}
+.paper [contenteditable]{background:#fffbe6;outline:1px dashed #d9b84a;border-radius:3px;padding:0 3px}
+.paper .st{width:13%;font-weight:700}
+.paper .sm{font-size:12.5px}
+.kmzh-hint{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line);position:relative;z-index:1}
+
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+
+@media print{
+  body{background:#fff!important}
+  #stars,nav.top,section:not(#kmzh),.hero,footer,.kmzh-tools,.kmzh-hint,#kmzh .sec-head{display:none!important}
+  #kmzh{padding:0}
+  .paper{box-shadow:none;padding:0;max-width:none}
+  .paper [contenteditable]{background:none;outline:none}
+  .paper tr{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <svg width="26" height="26" viewBox="0 0 100 100"><path d="M50 2 L58 42 L98 50 L58 58 L50 98 L42 58 L2 50 L42 42Z" fill="#f2c968"/><path d="M50 22 L54 46 L78 50 L54 54 L50 78 L46 54 L22 50 L46 46Z" fill="#fff" opacity=".8" transform="rotate(45 50 50)"/></svg>
+      Мағжан
+    </a>
+    <div class="links" id="links">
+      <a href="#home">Басты</a>
+      <a href="#bio">Өмірі</a>
+      <a href="#works">Шығармалары</a>
+      <a href="#theory">Теория</a>
+      <a href="#tasks">Тапсырмалар</a>
+      <a href="#games">Ойындар</a>
+      <a href="#iq">Зияткерлік алаң</a>
+      <a href="#refl">Рефлексия</a>
+      <a href="#hw">Үй тапсырмасы</a>
+      <a href="#kmzh">ҚМЖ</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero wrap" id="home">
+  <div class="medal">
+    <svg viewBox="0 0 200 200" width="170" height="170">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe3a0" stop-opacity=".55"/><stop offset="1" stop-color="#ffe3a0" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9b0"/><stop offset="1" stop-color="#d79b2c"/></linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="98" fill="url(#glow)"/>
+      <circle cx="100" cy="100" r="74" fill="#0b1f52" stroke="url(#gd)" stroke-width="3"/>
+      <circle cx="100" cy="100" r="66" fill="none" stroke="#f2c968" stroke-width="1" stroke-dasharray="3 5" opacity=".7"/>
+      <g fill="url(#gd)"><path d="M100 18 L108 92 L182 100 L108 108 L100 182 L92 108 L18 100 L92 92Z" opacity=".18"/></g>
+      <text x="100" y="122" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="74" font-weight="700" fill="url(#gd)">М</text>
+      <path d="M100 30 L103 44 L117 47 L103 50 L100 64 L97 50 L83 47 L97 44Z" fill="#fff"/>
+    </svg>
+  </div>
+  <div class="years">1893 — 1938</div>
+  <h1>Мағжан Жұмабаев</h1>
+  <div class="orn"></div>
+  <p class="sub" style="margin-top:14px">Қазақтың ұлы ақыны, ағартушы-педагог, Алаш қайраткері. «Шолпан» жұлдызындай қазақ поэзиясының көгінде мәңгі жанып тұрған есім.</p>
+  <div class="quote-hero">
+    «Арыстандай айбатты,<br>Жолбарыстай қайратты,<br>Қырандай күшті қанатты —<br>Мен жастарға сенемін!»
+    <small>Мағжан Жұмабаев, «Мен жастарға сенемін»</small>
+  </div>
+  <div class="goals">
+    <div class="goal"><b>ОҚУ МАҚСАТЫ · 6.1.5.1</b>Тірек сөздер, жетекші сұрақтар, мәтін тақырыбы арқылы негізгі ойды анықтау.</div>
+    <div class="goal"><b>ОҚУ МАҚСАТЫ · 6.5.1.4</b>Өздік, болымсыздық, белгісіздік, жалпылау есімдіктерін жазба және ауызша жұмыстарда орынды қолдану.</div>
+    <div class="goal"><b>ҚҰНДЫЛЫҚ</b>Отансүйгіштік, ұлттық руханиятқа құрмет, білімге құштарлық — «Мен жастарға сенемін!»</div>
+  </div>
+</header>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Ақын өмірі</div><h2>Өмір жолы</h2><div class="orn"></div>
+      <p>45 жылдық ғұмыр — шамшырақтай жарқын, қасіретке толы тағдыр. Ақын өмірін кезеңдер бойынша оқып, хронологиясын есте сақтаңыз.</p></div>
+
+    <div class="timeline reveal" id="timeline"></div>
+
+    <div class="facts reveal">
+      <div class="fact"><div class="n">1893</div><div class="l">25 маусым — Сасықкөл жағасында дүниеге келді</div></div>
+      <div class="fact"><div class="n">19</div><div class="l">жасында тұңғыш «Шолпан» жинағы шықты</div></div>
+      <div class="fact"><div class="n">1922</div><div class="l">қазақ тіліндегі тұңғыш «Педагогика» оқулығы</div></div>
+      <div class="fact"><div class="n">1988</div><div class="l">шығармалары халқына қайта оралды</div></div>
+    </div>
+
+    <div class="bio grid2" style="margin-top:28px">
+      <div>
+        <div class="card reveal"><span class="tag g">I кезең</span><h3>Балалық шағы мен алғашқы білімі</h3>
+          <p>Мағжан Бекентайұлы Жұмабаев 1893 жылы 25 маусымда бұрынғы Ақмола облысы Петропавл уезіне қарасты Сасықкөл жағасында (қазіргі Солтүстік Қазақстан облысы) дүниеге келген. Әкесі Бекентай — ауқатты, сауатты, елге сыйлы адам болған. Бала Мағжан алдымен ауыл молдасынан хат таниды, кейін әкесі ашқан мектепте оқиды.</p>
+          <p>Зерек бала кейін Қызылжар (Петропавл) қаласындағы медреседе білім алып, араб, парсы, түрік тілдерін, шығыс әдебиетін меңгереді. Абай, Шығыс шайырлары, кейін орыс және Еуропа әдебиеті оның ақындық танымын кеңейтеді.</p>
+        </div>
+        <div class="card reveal"><span class="tag g">II кезең</span><h3>«Ғалия» медресесі және «Шолпан»</h3>
+          <p>1910–1912 жылдары Мағжан Уфадағы атақты «Ғалия» медресесінде оқиды. Мұнда татар жазушысы Ғалымжан Ибрагимов сабақ береді, жас ақынның талантын бағалап, қолдау көрсетеді.</p>
+          <p>1912 жылы Қазан қаласында ақынның тұңғыш өлеңдер жинағы — <b>«Шолпан»</b> басылып шығады. Бұл кезде Мағжан небәрі 19 жаста еді. Шолпан — таң алдында туатын жарық жұлдыз, ол ақын поэзиясының символына айналды.</p>
+        </div>
+        <div class="card reveal"><span class="tag g">III кезең</span><h3>Омбы семинариясы және Алаш</h3>
+          <p>1913–1917 жылдары Омбыдағы мұғалімдер семинариясында оқиды. Бұл жерде орыс және әлем әдебиетін терең меңгеріп, Сәкен Сейфуллин сияқты замандастарымен бірге «Бірлік» жастар ұйымына қатысады.</p>
+          <p>Мағжан — <b>Алаш</b> қозғалысының белсенді қайраткері. Ә. Бөкейхан, А. Байтұрсынұлы, М. Дулатұлы сынды тұлғалармен тағдырлас, мақсаттас болды. Ақын ел азаттығын, ұлт бірлігін, білім мен өнерді жырлады.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card reveal"><span class="tag m">IV кезең</span><h3>Ағартушы-педагог</h3>
+          <p>Мағжан Жұмабаев — тек ақын емес, ұлы ұстаз. 1922 жылы Орынборда оның <b>«Педагогика»</b> атты еңбегі жарық көрді. Бұл — қазақ тілінде жазылған алғашқы педагогика оқулықтарының бірі. Онда бала тәрбиесі, ана тілінің маңызы, ұлттық тәрбие туралы құнды ойлар айтылған.</p>
+          <p>1923 жылы Ташкентте ақынның өлеңдер жинағы жарық көреді. Сол жылдары ол Ташкентте мұғалімдер даярлайтын оқу орнында сабақ береді. 1923–1927 жылдары Мәскеудегі В. Брюсов басқарған Жоғары әдебиет-көркемөнер институтында оқиды.</p>
+        </div>
+        <div class="card reveal"><span class="tag r">V кезең</span><h3>Қуғын-сүргін жылдары</h3>
+          <p>Ұлтын сүйген ақын кеңестік билікке «жат» саналды. 1929 жылы тұтқындалып, 10 жылға сотталады, Карелия мен Архангельск жақтағы лагерьлерде азап шегеді. 1936 жылы Максим Горькийдің жұбайы Е. Пешкованың араша түсуімен босап шығады.</p>
+          <p>Бірақ бостандық ұзаққа созылмады: 1937 жылдың 30 желтоқсанында қайта тұтқындалып, <b>1938 жылы 19 наурызда</b> Алматыда атылды. Ақын небәрі 45 жаста еді.</p>
+        </div>
+        <div class="card reveal"><span class="tag m">VI кезең</span><h3>Ақталуы және мұрасы</h3>
+          <p>Ақын 1960 жылы заң жүзінде ақталғанмен, шығармалары ұзақ жылдар бойы тыйым салынып келді. Тек <b>1988 жылы</b> Мағжан мұрасы толық ақталып, халқына қайта оралды.</p>
+          <p>Бүгінде Солтүстік Қазақстан облысындағы аудан, көшелер, мектептер ақын есімімен аталады. Мағжанды «ақындардың ақыны» деп атайды: ол қазақ өлеңіне жаңа ырғақ, жаңа бейне, нәзік сезім әкелді.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Мұрасы</div><h2>Шығармалары</h2><div class="orn"></div>
+      <p>Лирика, поэма, проза, аударма, педагогика — Мағжан шығармашылығы сан қырлы.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><span class="tag g">Жинақ · 1912</span><h3>«Шолпан»</h3><p>Ақынның Қазанда басылған тұңғыш өлеңдер жинағы. Жас ақынның арманы мен ел қамы жырланған.</p></div>
+      <div class="card reveal"><span class="tag g">Поэма · 1923</span><h3>«Батыр Баян»</h3><p>Абылай хан заманындағы батыр Баянның ерлігі мен қасіреті туралы поэма. Ел намысы мен жеке сезім тартысы бейнеленген.</p></div>
+      <div class="card reveal"><span class="tag g">Поэма</span><h3>«Қорқыт»</h3><p>Өлімнен қашқан Қорқыт туралы аңыз негізінде жазылған философиялық туынды: өнер — мәңгілік.</p></div>
+      <div class="card reveal"><span class="tag g">Поэма</span><h3>«Қойлыбайдың қобызы»</h3><p>Бақсы Қойлыбай және қобыздың сиқырлы күші туралы. Ұлттық өнер мен рухтың құдіреті жырланады.</p></div>
+      <div class="card reveal"><span class="tag m">Лирика</span><h3>«Мен жастарға сенемін»</h3><p>Ақынның жас ұрпаққа деген сенімі мен үміті. Жастарды арыстан, жолбарыс, қыранға теңейді.</p></div>
+      <div class="card reveal"><span class="tag m">Лирика</span><h3>«Түркістан»</h3><p>Түркі халықтарының ортақ бесігі — Түркістан туралы толғау. Тарихқа, ата-бабаға құрмет.</p></div>
+      <div class="card reveal"><span class="tag r">Проза</span><h3>«Шолпанның күнәсі»</h3><p>Қазақ әйелінің тағдыры туралы әңгіме. Ақынның прозадағы шеберлігін көрсетеді.</p></div>
+      <div class="card reveal"><span class="tag r">Педагогика · 1922</span><h3>«Педагогика»</h3><p>Тәрбие туралы ғылыми еңбек. «Ана тілі — ұлттың жаны» деген ойды ақын осы кітапта да дәлелдейді.</p></div>
+      <div class="card reveal"><span class="tag">Аударма</span><h3>Аудармалары</h3><p>Орыс және әлем ақындарының өлеңдерін қазақ тіліне аударып, әдебиетімізді байытты.</p></div>
+    </div>
+    <div class="grid2" style="margin-top:22px">
+      <div class="card reveal">
+        <h3>«Түркістан»</h3>
+        <div class="poem">Түркістан — екі дүние есігі ғой,<br>Түркістан — ер түріктің бесігі ғой.<small>Мағжан Жұмабаев</small></div>
+        <p style="font-size:14px;color:var(--muted)">Ақын Түркістанды «бесік» деп атау арқылы оны барлық түркі халқының ортақ отаны ретінде бейнелейді. <b style="color:var(--gold)">Сұрақ:</b> «бесік» сөзі мұнда қандай мағынада қолданылған?</p>
+      </div>
+      <div class="card reveal">
+        <h3>Ақын поэзиясының ерекшелігі</h3>
+        <ul style="margin:0;padding-left:18px;font-size:14px">
+          <li>Қазақ өлеңіне жаңа өлшемдер мен ырғақтар енгізді;</li>
+          <li>Табиғат пен адам сезімін нәзік суреттеді («Жазғытұры», «Шолпан»);</li>
+          <li>Тарих пен аңыздан нәр алды («Батыр Баян», «Қорқыт»);</li>
+          <li>Ел азаттығы, ұлт бірлігі, жастарға сенім — басты тақырыптары;</li>
+          <li>Тілі бейнелі, көркем — сондықтан «ақындардың ақыны» атанды.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEORY -->
+<section id="theory">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Тіл ережесі · 6.5.1.4</div><h2>Есімдіктер</h2><div class="orn"></div>
+      <p>Есімдік — зат есімнің, сын есімнің, сан есімнің орнына жүретін сөз табы. Қазақ тілінде есімдіктің 7 түрі бар: жіктеу, сілтеу, сұрау, <b style="color:var(--gold)">өздік, болымсыздық, белгісіздік, жалпылау</b>. Бүгін соңғы төртеуін меңгереміз.</p></div>
+
+    <div class="card reveal">
+      <div class="tabs" id="thTabs">
+        <button class="on" data-t="0">Жалпы кесте</button>
+        <button data-t="1">Өздік</button>
+        <button data-t="2">Болымсыздық</button>
+        <button data-t="3">Белгісіздік</button>
+        <button data-t="4">Жалпылау</button>
+        <button data-t="5">Емле</button>
+      </div>
+      <div class="tabpane on">
+        <div style="overflow-x:auto">
+        <table class="th">
+          <tr><th>Түрі</th><th>Мағынасы</th><th>Сөздер</th><th>Мысал (Мағжан туралы)</th></tr>
+          <tr><td><b>Өздік</b></td><td>Іс-әрекеттің иесін нақтылап, оны өзгелерден бөліп көрсетеді</td><td><span class="pill">өз</span><span class="pill">өзім</span><span class="pill">өзің</span><span class="pill">өзіңіз</span><span class="pill">өзі</span><span class="pill">өздері</span></td><td>Ақын <mark>өз</mark> халқының болашағына сенді.</td></tr>
+          <tr><td><b>Болымсыздық</b></td><td>Заттың, белгінің, амалдың жоқтығын, болмауын білдіреді</td><td><span class="pill">ешкім</span><span class="pill">ештеңе</span><span class="pill">ешбір</span><span class="pill">ешқандай</span><span class="pill">ешқашан</span><span class="pill">ешқайда</span><span class="pill">ешқайсы</span><span class="pill">ешнәрсе</span></td><td>Мағжан туған халқын <mark>ешқашан</mark> ұмытпады.</td></tr>
+          <tr><td><b>Белгісіздік</b></td><td>Затты, белгіні, мөлшерді анық, нақты көрсетпей, жалпылама білдіреді</td><td><span class="pill">біреу</span><span class="pill">бірдеңе</span><span class="pill">бірнеше</span><span class="pill">кейбір</span><span class="pill">кейбіреу</span><span class="pill">әлдекім</span><span class="pill">әлдене</span><span class="pill">әлдеқандай</span><span class="pill">әлдеқашан</span><span class="pill">әлдеқайда</span></td><td>Ақынның <mark>кейбір</mark> өлеңдері ұзақ жыл жарияланбады.</td></tr>
+          <tr><td><b>Жалпылау</b></td><td>Заттарды, құбылыстарды бөлмей, жиынтық түрде, тұтас қамтып көрсетеді</td><td><span class="pill">бәрі</span><span class="pill">барлық</span><span class="pill">барша</span><span class="pill">бүкіл</span><span class="pill">күллі</span><span class="pill">әркім</span><span class="pill">әрбір</span><span class="pill">әрқайсы</span><span class="pill">әрқашан</span><span class="pill">түгел</span></td><td>Мағжан өлеңдерін <mark>бүкіл</mark> қазақ елі сүйіп оқиды.</td></tr>
+        </table></div>
+      </div>
+      <div class="tabpane">
+        <h3>Өздік есімдігі</h3>
+        <p>Жалғыз түбірі — <b>өз</b>. Ол тәуелдік жалғауымен түрленіп, жақ көрсетеді: <i>өзім, өзіміз (І жақ); өзің, өзіңіз, өздерің (ІІ жақ); өзі, өздері (ІІІ жақ)</i>. Септеледі: <i>өзім, өзімнің, өзіме, өзімді, өзімде, өзімнен, өзіммен</i>.</p>
+        <div class="poem" style="font-size:19px">«Мен <b>өзім</b> Мағжанның өлеңдерін жатқа білемін».<br>«Ақын <b>өз</b> ойын батыл айтты».</div>
+        <div class="note"><b>Есте сақта!</b> «Өз» сөзі тәуелдік жалғаусыз да қолданылады: <i>өз елі, өз ұлтым</i>. «Өзен», «өзгеріс» сөздері есімдік емес!</div>
+      </div>
+      <div class="tabpane">
+        <h3>Болымсыздық есімдігі</h3>
+        <p><b>еш</b> сөзінің сұрау есімдіктерімен (кім, не, қандай, қашан, қайда, қайсы) және <b>бір</b> сөзімен бірігуінен жасалады: <i>еш + кім = ешкім, еш + қашан = ешқашан, еш + бір = ешбір</i>. «Ештеңе» — еш + теңе.</p>
+        <div class="poem" style="font-size:19px">«Мағжан шығармаларын <b>ешкім</b> өшіре алмады».<br>«Ақын <b>ешқандай</b> қиындықтан қаймықпады».</div>
+        <div class="note"><b>Ерекшелігі:</b> болымсыздық есімдігі бар сөйлемнің баяндауышы көбіне болымсыз түрде келеді: <i>Ешкім келмеді. Ештеңе білмеймін.</i></div>
+      </div>
+      <div class="tabpane">
+        <h3>Белгісіздік есімдігі</h3>
+        <p>Үш жолмен жасалады: <b>әлде</b> + сұрау есімдігі (<i>әлдекім, әлдене, әлдеқандай, әлдеқашан, әлдеқайда</i>); <b>бір</b> сөзі арқылы (<i>біреу, бірдеңе, бірнеше</i>); <b>кей</b> сөзі арқылы (<i>кейбір, кейбіреу</i>).</p>
+        <div class="poem" style="font-size:19px">«<b>Біреу</b> Мағжанның «Шолпан» өлеңін мәнерлеп оқыды».<br>«Ақын <b>әлдеқашан</b> халық жүрегінен орын алған».</div>
+        <div class="note"><b>Есте сақта!</b> «Бір» сан есім ретінде нақты санды білдіреді (<i>бір кітап</i>), ал «біреу» — белгісіз адамды білдіреді (<i>біреу келді</i>).</div>
+      </div>
+      <div class="tabpane">
+        <h3>Жалпылау есімдігі</h3>
+        <p>Жалпылау мағынасын береді: <i>бәрі, барлық, барша, бүкіл, күллі, түгел, тегіс</i>; <b>әр</b> сөзі арқылы: <i>әркім, әрбір, әрқайсы, әрқашан, әрдайым, әрнәрсе</i>.</p>
+        <div class="poem" style="font-size:19px">«<b>Барлық</b> оқушы Мағжанның өлеңін оқыды».<br>«<b>Әрбір</b> қазақ ақын есімін мақтан тұтады».</div>
+        <div class="note"><b>Есте сақта!</b> Жалпылау есімдігі көбіне анықтауыш не бастауыш болады. «Бәрі» сөзі тәуелденіп келеді: <i>бәріміз, бәрің, бәрі</i>.</div>
+      </div>
+      <div class="tabpane">
+        <h3>Емле ережелері</h3>
+        <div style="overflow-x:auto"><table class="th">
+          <tr><th>Бірге жазылады</th><th>Бөлек жазылады</th></tr>
+          <tr><td>ешкім, ештеңе, ешбір, ешқандай, ешқашан, ешқайда</td><td>әр адам, әр кітап, әр күн (әр + зат есім)</td></tr>
+          <tr><td>әлдекім, әлдене, әлдеқандай, әлдеқашан</td><td>өз елі, өз ойы (өз + зат есім)</td></tr>
+          <tr><td>әркім, әрбір, әрқайсы, әрқашан, кейбір, кейбіреу</td><td>бір нәрсе (екі түрлі жазылады: <i>бірнәрсе / бір нәрсе</i> — сөздікке қара)</td></tr>
+        </table></div>
+        <div class="note"><b>Ойлан:</b> «әрбір» неге бірге, ал «әр бала» неге бөлек жазылады? — «Әрбір» — біріккен сөз, ал «әр» мұнда жеке сөз ретінде зат есіммен тіркеседі.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TASKS -->
+<section id="tasks">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Сабақ тапсырмалары</div><h2>Үш тапсырма</h2><div class="orn"></div></div>
+
+    <!-- Task 1 -->
+    <div class="card task reveal">
+      <div class="num">01</div>
+      <span class="tag">Тыңдалым · 6.1.5.1</span>
+      <h3>«Белсенді тыңдау»: негізгі ойды анықта</h3>
+      <p>Мұғалім мәтінді оқиды (немесе «Тыңдау» батырмасын басыңыз). Мұқият тыңдап, <b>тірек сөздерді</b> белгілеңіз, <b>жетекші сұрақтарға</b> жауап беріп, <b>негізгі ойды</b> анықтаңыз.</p>
+      <div class="row">
+        <button class="btn sky" id="ttsBtn">▶ Тыңдау</button>
+        <button class="btn ghost" id="showTxt">Мәтінді көрсету / жасыру</button>
+      </div>
+      <div class="listen-text" id="listenText"><b class="serif" style="font-size:22px;color:var(--gold)">Халқына сенген ақын</b><br>
+        Мағжан Жұмабаев 1893 жылы Солтүстік Қазақстанда, Сасықкөл жағасында дүниеге келген. Ол бала кезінен өлеңге құмар болып, білім іздеп, Қызылжар, Уфа, Омбы қалаларында оқыды. Он тоғыз жасында «Шолпан» атты тұңғыш жинағын шығарды. Ақын өз өлеңдерінде туған жердің табиғатын, халқының тарихын, ел азаттығын жырлады. Мағжан жастарға ерекше сенді: оның ойынша, елдің болашағын білімді, өнерлі, жігерлі жастар жасайды. Ол «Педагогика» кітабын жазып, бала тәрбиесіне үлкен мән берді. Қуғын-сүргін жылдары ақын жазықсыз жазаланды, кітаптары ұзақ жыл бойы тыйым салынып келді. Алайда шын өнерді ешкім жоя алмайды. Бүгінде Мағжан өлеңдерін барлық қазақ сүйіп оқиды. Ақынның халқына, жастарға деген сенімі әрбір ұрпаққа үлгі.
+      </div>
+      <h4 style="margin:18px 0 4px">1-қадам. Тірек сөздерді таңдаңыз (5 сөз)</h4>
+      <div class="chips" id="kwChips"></div>
+      <div class="row" style="margin-top:10px"><button class="btn" id="kwCheck">Тексеру</button></div>
+      <div class="fb" id="kwFb"></div>
+
+      <h4 style="margin:18px 0 4px">2-қадам. Жетекші сұрақтар</h4>
+      <div class="qa">
+        <details><summary>1. Мағжан қай жерде, қай жылы туған?</summary><p>1893 жылы Солтүстік Қазақстанда, Сасықкөл жағасында.</p></details>
+        <details><summary>2. Ақынның тұңғыш жинағы қалай аталады?</summary><p>«Шолпан» — 19 жасында шыққан.</p></details>
+        <details><summary>3. Мағжан өлеңдерінде нені жырлады?</summary><p>Туған жер табиғатын, халық тарихын, ел азаттығын.</p></details>
+        <details><summary>4. Ақын кімге ерекше сенді және неге?</summary><p>Жастарға: елдің болашағын білімді, өнерлі, жігерлі жастар жасайды.</p></details>
+        <details><summary>5. «Шын өнерді ешкім жоя алмайды» деген сөйлемнің мағынасы қандай?</summary><p>Ақын жазаланса да, оның шығармалары халқына қайта оралды — өнер мәңгілік.</p></details>
+      </div>
+
+      <h4 style="margin:18px 0 4px">3-қадам. Мәтіннің негізгі ойы қандай?</h4>
+      <div id="mainIdea"></div>
+      <div class="fb" id="miFb"></div>
+      <div class="desc"><b>Дескриптор:</b><ul><li>мәтіннен тірек сөздерді анықтайды;</li><li>жетекші сұрақтарға толық жауап береді;</li><li>мәтін тақырыбы мен тірек сөздерге сүйеніп, негізгі ойды анықтайды.</li></ul></div>
+    </div>
+
+    <!-- Task 2 -->
+    <div class="card task reveal">
+      <div class="num">02</div>
+      <span class="tag g">Тілдік тапсырма · 6.5.1.4</span>
+      <h3>«Орнын тап»: есімдікті қой да, түрін ата</h3>
+      <p>Сөйлемдерге мағынасына сай есімдікті таңдаңыз. Тексергеннен кейін әр есімдіктің түрі көрсетіледі.</p>
+      <div class="fill" id="fillBox"></div>
+      <div class="row" style="margin-top:12px"><button class="btn" id="fillCheck">Тексеру</button><button class="btn ghost" id="fillReset">Қайта бастау</button></div>
+      <div class="fb" id="fillFb"></div>
+      <div class="desc"><b>Дескриптор:</b><ul><li>сөйлемнің мағынасына сай есімдікті таңдайды;</li><li>есімдіктің түрін (өздік, болымсыздық, белгісіздік, жалпылау) ажыратады;</li><li>сөйлемді ауызша құрап, дұрыс айтады.</li></ul></div>
+    </div>
+
+    <!-- Task 3 -->
+    <div class="card task reveal">
+      <div class="num">03</div>
+      <span class="tag m">Жазылым · 6.5.1.4</span>
+      <h3>«Мағжан — ұлы ақын»: шағын мәтін жаз</h3>
+      <p>Ақын туралы 5–6 сөйлемнен тұратын шағын мәтін жазыңыз. Мәтінде <b>төрт түрлі есімдікті</b> (өздік, болымсыздық, белгісіздік, жалпылау) қолданыңыз. Жазып отырғанда тексергіш есімдіктерді өзі санайды.</p>
+      <textarea id="essay" placeholder="Мысалы: Мағжан Жұмабаев өз халқын шексіз сүйді..."></textarea>
+      <div class="counter" id="counter">
+        <div data-k="ozd"><b>0</b>Өздік</div>
+        <div data-k="bol"><b>0</b>Болымсыздық</div>
+        <div data-k="bel"><b>0</b>Белгісіздік</div>
+        <div data-k="zhal"><b>0</b>Жалпылау</div>
+      </div>
+      <div class="row" style="margin-top:12px"><button class="btn" id="essayCheck">Тексеру және белгілеу</button><button class="btn ghost" id="essaySample">Үлгі мәтін</button></div>
+      <div class="fb" id="essayFb"></div>
+      <div id="essayMarked" class="listen-text"></div>
+      <div class="desc"><b>Дескриптор:</b><ul><li>ақын туралы 5–6 сөйлемнен тұратын байланысты мәтін құрайды;</li><li>өздік, болымсыздық, белгісіздік, жалпылау есімдіктерін орынды қолданады;</li><li>есімдіктерді дұрыс жазады (бірге/бөлек).</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Интерактивті ойындар</div><h2>Ойнай отырып үйрен</h2><div class="orn"></div></div>
+    <div class="card reveal" style="margin-bottom:22px">
+      <span class="tag g">1-ойын</span><h3>«Себетке сал»: есімдіктерді сұрыпта</h3>
+      <p>Алдымен сөзді басыңыз, кейін оның түріне сай себетті басыңыз.</p>
+      <div class="bank" id="bank"></div>
+      <div class="bins" id="bins"></div>
+      <div class="row" style="margin-top:12px"><button class="btn" id="sortCheck">Тексеру</button><button class="btn ghost" id="sortReset">Қайта бастау</button></div>
+      <div class="fb" id="sortFb"></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card reveal">
+        <span class="tag">2-ойын</span><h3>«Ақын өмірі» викторинасы</h3>
+        <div class="qz-prog"><i id="qzBar" style="width:0"></i></div>
+        <div id="quiz"></div>
+      </div>
+      <div class="card reveal tlgame">
+        <span class="tag m">3-ойын</span><h3>«Уақыт керуені»</h3>
+        <p style="font-size:14px">Әр оқиғаға сай жылды таңдаңыз.</p>
+        <div id="tlg"></div>
+        <div class="row" style="margin-top:10px"><button class="btn" id="tlgCheck">Тексеру</button></div>
+        <div class="fb" id="tlgFb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IQ -->
+<section id="iq">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Зияткерлік алаң</div><h2>«Мағжан әлемі»</h2><div class="orn"></div>
+      <p>Екі топ кезекпен ұяшық таңдайды. Жауап беруге 30 секунд. Дұрыс жауап — ұпай топқа қосылады.</p></div>
+    <div class="teams">
+      <div class="team"><input id="tnA" value="«Шолпан» тобы"><div class="sc" id="scA">0</div></div>
+      <div class="team"><input id="tnB" value="«Батыр Баян» тобы"><div class="sc" id="scB">0</div></div>
+    </div>
+    <div class="board reveal" id="board"></div>
+    <div class="row" style="justify-content:center;margin-top:16px"><button class="btn ghost" id="boardReset">Ойынды қайта бастау</button></div>
+  </div>
+</section>
+<div class="modal" id="modal"><div class="box">
+  <div class="tag g" id="mCat"></div>
+  <div class="timer" id="mTimer">30</div>
+  <div class="q" id="mQ"></div>
+  <div class="a" id="mA"></div>
+  <div class="row" style="justify-content:center" id="mBtns1"><button class="btn sky" id="mShow">Жауапты көрсету</button></div>
+  <div class="row" style="justify-content:center;display:none" id="mBtns2">
+    <button class="btn" id="mToA">+ A топ</button><button class="btn" id="mToB">+ B топ</button><button class="btn ghost" id="mNone">Ешкімге</button>
+  </div>
+</div></div>
+
+<!-- REFLECTION -->
+<section id="refl">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Кері байланыс</div><h2>Рефлексия: «Бес саусақ»</h2><div class="orn"></div></div>
+    <div class="card reveal">
+      <p style="text-align:center">Бүгінгі сабақтан кейінгі көңіл-күйіңізді таңдаңыз:</p>
+      <div class="emo" id="emo">
+        <button data-v="Бәрін түсіндім, өзім басқаларға түсіндіре аламын"><span>🌟</span>Шолпандай жарқын</button>
+        <button data-v="Түсіндім, бірақ кейбір сұрақтарым бар"><span>🌤</span>Таң атып келеді</button>
+        <button data-v="Әлі де қиындықтар бар, қосымша көмек керек"><span>🌙</span>Түн әлі кетпеді</button>
+      </div>
+      <div class="hand">
+        <label>👍 Бас бармақ — маған ұнағаны:<input type="text" id="h1"></label>
+        <label>☝ Балан үйрек — мен білдім:<input type="text" id="h2"></label>
+        <label>✋ Ортан терек — қиын болғаны:<input type="text" id="h3" placeholder=""></label>
+        <label>💍 Шылдыр шүмек — сабақтағы көңіл-күйім:<input type="text" id="h4"></label>
+        <label>🤙 Кішкентай бөбек — тағы білгім келеді:<input type="text" id="h5"></label>
+      </div>
+      <div class="row" style="margin-top:14px;justify-content:center"><button class="btn" id="reflBtn">Рефлексияны аяқтау</button></div>
+      <div class="refl-out card" id="reflOut"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section id="hw" class="hw">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="kicker">Саралап берілген</div><h2>Үй тапсырмасы</h2><div class="orn"></div></div>
+    <div class="grid3">
+      <div class="card reveal"><div class="lvl">A</div><span class="tag m">А деңгейі · негізгі</span><h3>Мәнерлеп оқу</h3><p>«Мен жастарға сенемін» өлеңінің үзіндісін мәнерлеп оқып, жаттау. Өлеңнен 3 тірек сөзді теріп жазып, негізгі ойын 2 сөйлеммен түсіндіру.</p></div>
+      <div class="card reveal"><div class="lvl">B</div><span class="tag g">В деңгейі · орта</span><h3>Эссе</h3><p>«Мағжан — жастарға сенген ақын» тақырыбында 8–10 сөйлемнен тұратын эссе жазу. Төрт түрлі есімдікті (өздік, болымсыздық, белгісіздік, жалпылау) кем дегенде бір-бірден қолданып, астын сызу.</p></div>
+      <div class="card reveal"><div class="lvl">C</div><span class="tag r">С деңгейі · жоғары</span><h3>Зерттеу</h3><p>Мағжанның бір өлеңінен (таңдау бойынша) есімдіктерді теріп, түрлеріне қарай кластер құру. Ақынның өлеңдеріндегі есімдіктердің көркемдік қызметіне қысқаша талдау жасау.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KMZH -->
+<section id="kmzh">
+  <div class="wrap">
+    <div class="sec-head"><div class="kicker">Педагогке</div><h2>Қысқа мерзімді жоспар</h2><div class="orn"></div>
+      <p>Сары түсті өрістерді (аты-жөні, күні, сынып) тікелей басып толтырыңыз, содан кейін PDF немесе басып шығаруға арналған файлды жүктеп алыңыз.</p></div>
+    <div class="kmzh-tools">
+      <a class="btn" href="kmzh-magzhan.docx" download="ҚМЖ_Мағжан_Жұмабаев.docx">⬇ ҚМЖ — Word жүктеу</a>
+      <button class="btn" id="dlPdf">⬇ ҚМЖ — PDF жүктеу</button>
+      <button class="btn sky" id="dlHtml">🖨 Басып шығаруға арналған нұсқа (.html)</button>
+      <button class="btn ghost" id="dlPrint">🖨 Басып шығару</button>
+    </div>
+    <div class="fb" id="dlFb" style="text-align:center"></div>
+
+    <div class="paper" id="paper">
+      <h2>Қысқа мерзімді жоспар</h2>
+      <p class="ctr">Қазақ тілі, 6-сынып</p>
+      <table>
+        <tr><td class="lab">Бөлім:</td><td contenteditable="true">Ұлы тұлғалар</td></tr>
+        <tr><td class="lab">Педагогтің аты-жөні:</td><td contenteditable="true">&nbsp;</td></tr>
+        <tr><td class="lab">Күні:</td><td contenteditable="true">&nbsp;</td></tr>
+        <tr><td class="lab">Сынып: 6 «&nbsp;&nbsp;»</td><td>Қатысқандар саны: <span contenteditable="true">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp;&nbsp; Қатыспағандар саны: <span contenteditable="true">&nbsp;&nbsp;&nbsp;&nbsp;</span></td></tr>
+        <tr><td class="lab">Сабақтың тақырыбы:</td><td><b>Мағжан Жұмабаев — қазақтың ұлы ақыны</b></td></tr>
+        <tr><td class="lab">Оқу бағдарламасына сәйкес оқу мақсаттары:</td><td>6.1.5.1 – тірек сөздер, жетекші сұрақтар, мәтін тақырыбы арқылы негізгі ойды анықтау;<br>6.5.1.4 – өздік, болымсыздық, белгісіздік, жалпылау есімдіктерін жазба және ауызша жұмыстарда орынды қолдану.</td></tr>
+        <tr><td class="lab">Сабақтың мақсаты:</td><td>
+          <p><b>Барлық оқушылар:</b> тыңдалған мәтіннен тірек сөздерді тауып, жетекші сұрақтарға жауап береді; есімдіктің төрт түрін ажыратады.</p>
+          <p><b>Көптеген оқушылар:</b> тірек сөздер мен тақырыпқа сүйеніп мәтіннің негізгі ойын анықтайды; есімдіктерді сөйлемде орынды қолданады.</p>
+          <p><b>Кейбір оқушылар:</b> ақын туралы байланысты мәтін құрап, төрт түрлі есімдікті жазба және ауызша сөйлеуде шебер қолданады, емлесін дұрыс жазады.</p></td></tr>
+        <tr><td class="lab">Бағалау критерийлері:</td><td>• Тірек сөздер мен жетекші сұрақтар арқылы мәтіннің негізгі ойын анықтайды.<br>• Өздік, болымсыздық, белгісіздік, жалпылау есімдіктерін ажыратып, ауызша және жазбаша орынды қолданады.</td></tr>
+        <tr><td class="lab">Тілдік мақсат:</td><td><b>Пәндік лексика:</b> өздік, болымсыздық, белгісіздік, жалпылау есімдігі, тірек сөз, негізгі ой.<br><b>Диалогқа арналған тіркестер:</b> «Менің ойымша, мәтіннің негізгі ойы...», «Бұл сөйлемдегі ... — ... есімдігі, себебі...»</td></tr>
+        <tr><td class="lab">Құндылықтарды дарыту:</td><td>Отансүйгіштік, ұлттық руханиятқа құрмет, білімге құштарлық, өзара сыйластық.</td></tr>
+        <tr><td class="lab">Пәнаралық байланыс:</td><td>Қазақ әдебиеті (ақын шығармалары), Қазақстан тарихы (Алаш қозғалысы, қуғын-сүргін жылдары).</td></tr>
+        <tr><td class="lab">Алдыңғы білім:</td><td>Есімдік, оның жіктеу, сілтеу, сұрау түрлері.</td></tr>
+      </table>
+
+      <p style="text-align:center;font-weight:700;margin:10px 0 6px">Сабақтың барысы</p>
+      <table class="sm">
+        <tr><th style="width:13%">Сабақтың кезеңі / уақыт</th><th style="width:31%">Педагогтің әрекеті</th><th style="width:24%">Оқушының әрекеті</th><th style="width:17%">Бағалау</th><th style="width:15%">Ресурстар</th></tr>
+        <tr><td class="st">Ұйымдастыру кезеңі<br>0–2 мин</td>
+          <td>Сәлемдесу, түгендеу. «Жүректен жүрекке» психологиялық ахуал: оқушылар бір-біріне жылы тілек айтады.<br><b>Топқа бөлу:</b> «өзім», «ешкім», «біреу», «бәрі» сөздері жазылған кәртішкелер арқылы 4 топ құрылады: <i>Өздік, Болымсыздық, Белгісіздік, Жалпылау</i>.</td>
+          <td>Тілек айтады. Кәртішке алып, топқа бөлінеді, топ атауын түсіндіреді.</td>
+          <td>Ауызша мадақтау</td>
+          <td>Кәртішкелер, сайттың «Басты» бөлімі</td></tr>
+        <tr><td class="st">Қызығушылықты ояту<br>2–5 мин</td>
+          <td><b>«Ой қозғау»</b> әдісі. Ақын суреті мен «Мен жастарға сенемін» өлеңінің үзіндісі көрсетіледі.<br>Сұрақтар: «Бұл кімнің жолдары? Ақын кімге сенеді? Неге?» Оқушылармен бірге сабақтың тақырыбы мен мақсаты анықталады.</td>
+          <td>Болжам жасайды, сұрақтарға жауап береді, тақырыпты анықтайды.</td>
+          <td>ҚБ: «Жарайсың!», «Тамаша ой!»</td>
+          <td>Сайт: «Басты» бөлімі, өлең үзіндісі</td></tr>
+        <tr><td class="st">Мағынаны ажырату<br>Тапсырма 1<br>5–15 мин</td>
+          <td><b>«Белсенді тыңдау»</b> (тыңдалым, 6.1.5.1). Педагог «Халқына сенген ақын» мәтінін мәнерлеп оқиды.<br>1) Тірек сөздерді белгілеу;<br>2) Жетекші сұрақтарға жауап беру;<br>3) Мәтіннің негізгі ойын анықтау.<br>Ақынның өмір жолы уақыт сызығы бойынша талданады.<br><b>Саралау:</b> қолдауды қажет ететін оқушыларға тірек сөздер тізімі беріледі; жоғары деңгейлі оқушылар негізгі ойды өз сөзімен тұжырымдайды.</td>
+          <td>Тыңдайды, тірек сөздерді таңдайды, сұрақтарға жауап береді, негізгі ойды анықтайды.</td>
+          <td><b>Дескриптор:</b><br>– тірек сөздерді анықтайды;<br>– сұрақтарға жауап береді;<br>– негізгі ойды анықтайды.<br>ҚБ: «Бағдаршам»</td>
+          <td>Сайт: «Өмірі», «Тапсырмалар» (1-тапсырма), тыңдау мәтіні</td></tr>
+        <tr><td class="st">Жаңа білім<br>15–20 мин</td>
+          <td><b>«Кластер»</b> әдісі. Есімдіктің өздік, болымсыздық, белгісіздік, жалпылау түрлерінің мағынасы, жасалуы, емлесі сайттағы кесте арқылы түсіндіріледі. Әр топ өз есімдігі бойынша кластер құрып, мысал келтіреді.</td>
+          <td>Ережемен танысады, кластер құрып, топ атынан қорғайды.</td>
+          <td>Топтар бірін-бірі бағалайды: «Екі жұлдыз, бір тілек»</td>
+          <td>Сайт: «Теория» бөлімі, флипчарт, маркер</td></tr>
+        <tr><td class="st">Тапсырма 2<br>20–27 мин</td>
+          <td><b>«Орнын тап»</b> (6.5.1.4). Мағжан туралы сөйлемдерге мағынасына сай есімдікті қойып, түрін анықтау. Бекіту: <b>«Себетке сал»</b> интерактивті ойыны — есімдіктерді түрлеріне сұрыптау.</td>
+          <td>Есімдікті таңдайды, түрін атайды, сөйлемді ауызша айтады; ойын ойнайды.</td>
+          <td><b>Дескриптор:</b><br>– есімдікті орынды қояды;<br>– түрін ажыратады.<br>Сайттағы автоматты тексеру</td>
+          <td>Сайт: «Тапсырмалар» (2), «Ойындар» (1-ойын)</td></tr>
+        <tr><td class="st">Сергіту сәті<br>27–29 мин</td>
+          <td><b>«Шолпан жұлдызы»:</b> педагог есімдіктерді атайды. Өздік — қолды көтеру, болымсыздық — басты шайқау, белгісіздік — иықты көтеру, жалпылау — қол шапалақтау.</td>
+          <td>Қимылмен жауап береді.</td>
+          <td>—</td>
+          <td>—</td></tr>
+        <tr><td class="st">Тапсырма 3<br>29–36 мин</td>
+          <td><b>Жазылым:</b> «Мағжан — ұлы ақын» тақырыбына 5–6 сөйлемнен тұратын шағын мәтін жазу; мәтінде төрт түрлі есімдікті қолдану. <b>«Галерея»</b> әдісімен жұмыстар таныстырылады.<br><b>Саралау:</b> тірек сөйлемдер үлгісі беріледі.</td>
+          <td>Мәтін жазады, есімдіктердің астын сызады, оқып береді.</td>
+          <td><b>Дескриптор:</b><br>– 5–6 сөйлемді байланысты мәтін құрайды;<br>– 4 түрлі есімдікті орынды қолданады;<br>– емлесін дұрыс жазады.</td>
+          <td>Сайт: «Тапсырмалар» (3), есімдік санағышы</td></tr>
+        <tr><td class="st">Зияткерлік алаң<br>36–41 мин</td>
+          <td><b>«Мағжан әлемі»</b> интеллектуалды ойыны: 4 айдар (Өмір жолы, Шығармалары, Есімдіктер, Ойлан, тап!), 10–20–30 ұпайлық сұрақтар. Топтар кезекпен ұяшық таңдайды. Қосымша: «Ақын өмірі» викторинасы, «Уақыт керуені».</td>
+          <td>Топпен ақылдасып жауап береді, ұпай жинайды.</td>
+          <td>Ұпай жинау, топтық бағалау</td>
+          <td>Сайт: «Зияткерлік алаң», «Ойындар»</td></tr>
+        <tr><td class="st">Рефлексия<br>41–44 мин</td>
+          <td><b>«Бес саусақ»</b> әдісі және «Шолпан / Таң / Түн» көңіл-күй шкаласы.</td>
+          <td>Сабақ бойынша ойын білдіреді, өзін-өзі бағалайды.</td>
+          <td>Өзін-өзі бағалау</td>
+          <td>Сайт: «Рефлексия»</td></tr>
+        <tr><td class="st">Үй тапсырмасы<br>44–45 мин</td>
+          <td>Саралап беріледі:<br><b>А:</b> «Мен жастарға сенемін» үзіндісін мәнерлеп оқу, жаттау, тірек сөздерді жазу.<br><b>В:</b> «Мағжан — жастарға сенген ақын» эссесі (8–10 сөйлем, 4 түрлі есімдік).<br><b>С:</b> Ақын өлеңіндегі есімдіктерге кластер, көркемдік қызметіне талдау.</td>
+          <td>Үй тапсырмасын жазып алады, деңгейін таңдайды.</td>
+          <td>—</td>
+          <td>Сайт: «Үй тапсырмасы»</td></tr>
+      </table>
+
+      <table class="sm">
+        <tr><th>Саралау</th><th>Бағалау</th><th>Денсаулық және қауіпсіздік</th></tr>
+        <tr><td>Тапсырмалар қиындық деңгейі бойынша сараланады; қолдау қажет оқушыларға тірек сөздер, үлгі сөйлемдер беріледі; дарынды оқушыларға шығармашылық жазылым, негізгі ойды өз сөзімен тұжырымдау ұсынылады. Топтық жұмыста рөлдер бөлінеді.</td>
+          <td>Дескрипторлар бойынша қалыптастырушы бағалау; «Бағдаршам», «Екі жұлдыз, бір тілек», топтық бағалау, интерактивті тапсырмалардағы автоматты кері байланыс, өзін-өзі бағалау.</td>
+          <td>Сергіту сәті өткізіледі; интерактивті тақтамен жұмыс уақыты нормаға сай; сынып желдетіледі, қауіпсіздік ережелері сақталады.</td></tr>
+      </table>
+      <table class="sm">
+        <tr><th>Сабақ бойынша рефлексия (педагогке)</th></tr>
+        <tr><td>Сабақ мақсаттары орындалды ма? Оқушылар бүгін не үйренді? Қандай кезең тиімді болды? Келесі сабақта нені өзгертемін?<br><span contenteditable="true">&nbsp;</span></td></tr>
+      </table>
+    </div>
+    <p class="kmzh-hint">Кеңес: PDF файлын ашып, принтер арқылы басып шығарыңыз. «.html» нұсқасын браузерде ашсаңыз, басып шығару терезесі өзі ашылады.</p>
+  </div>
+</section>
+
+<footer><div class="wrap">«Мағжан Жұмабаев — қазақтың ұлы ақыны» · Қазақ тілі, 6-сынып · Интерактивті сабаққа арналған сайт</div></footer>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+/* stars */
+const st=$('#stars');
+for(let i=0;i<110;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+ const z=Math.random()*2+1;s.style.width=s.style.height=z+'px';s.style.animationDelay=(Math.random()*4)+'s';s.style.animationDuration=(3+Math.random()*4)+'s';st.appendChild(s)}
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+$$('.reveal').forEach(el=>io.observe(el));
+/* nav active */
+const secs=$$('header.hero, section');
+window.addEventListener('scroll',()=>{let cur='home';secs.forEach(s=>{if(s.getBoundingClientRect().top<120)cur=s.id});
+ $$('#links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur))},{passive:true});
+
+/* timeline */
+const TL=[
+ ['1893','25 маусымда Сасықкөл жағасында (Солтүстік Қазақстан) дүниеге келді.'],
+ ['1910–1912','Уфадағы «Ғалия» медресесінде оқыды.'],
+ ['1912','Қазанда тұңғыш «Шолпан» өлеңдер жинағы басылды.'],
+ ['1913–1917','Омбы мұғалімдер семинариясында оқыды, Алаш қозғалысына араласты.'],
+ ['1922','Орынборда «Педагогика» еңбегі жарық көрді.'],
+ ['1923','Ташкентте өлеңдер жинағы шықты; «Батыр Баян» поэмасы жазылды.'],
+ ['1923–1927','Мәскеудегі Жоғары әдебиет-көркемөнер институтында оқыды.'],
+ ['1929','Тұтқындалып, 10 жылға сотталды.'],
+ ['1936','Е. Пешкованың араласуымен босатылды.'],
+ ['1938','19 наурызда Алматыда атылды.'],
+ ['1960 / 1988','1960 жылы заң жүзінде ақталды, 1988 жылы шығармалары халқына оралды.']
+];
+$('#timeline').innerHTML=TL.map(t=>`<div class="tl"><div class="yr">${t[0]}</div><div class="tx">${t[1]}</div></div>`).join('');
+
+/* theory tabs */
+$$('#thTabs button').forEach(b=>b.onclick=()=>{$$('#thTabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+ const panes=$$('#theory .tabpane');panes.forEach(p=>p.classList.remove('on'));panes[+b.dataset.t].classList.add('on')});
+
+/* TASK 1 */
+let speaking=false;
+$('#ttsBtn').onclick=()=>{
+  try{
+    if(!('speechSynthesis' in window)){$('#listenText').classList.add('show');return}
+    if(speaking){speechSynthesis.cancel();speaking=false;$('#ttsBtn').textContent='▶ Тыңдау';return}
+    const u=new SpeechSynthesisUtterance($('#listenText').innerText);
+    const vs=speechSynthesis.getVoices();const v=vs.find(v=>/^kk/i.test(v.lang))||vs.find(v=>/^ru/i.test(v.lang))||vs.find(v=>/^tr/i.test(v.lang));
+    if(v){u.voice=v;u.lang=v.lang}else u.lang='kk-KZ';
+    u.rate=.9;u.onend=()=>{speaking=false;$('#ttsBtn').textContent='▶ Тыңдау'};
+    speechSynthesis.speak(u);speaking=true;$('#ttsBtn').textContent='■ Тоқтату';
+  }catch(e){$('#listenText').classList.add('show')}
+};
+$('#showTxt').onclick=()=>$('#listenText').classList.toggle('show');
+const KW=[['Сасықкөл',1],['Шолпан',1],['ел азаттығы',1],['жастарға сенді',1],['Педагогика',1],['қызыл түс',0],['теңіз',0],['спорт',0],['ертегі',0],['саяхат',0]];
+const kwBox=$('#kwChips');
+shuffle(KW).forEach(([w,ok])=>{const c=document.createElement('span');c.className='chip';c.textContent=w;c.dataset.ok=ok;c.onclick=()=>{c.classList.remove('right','wrong');c.classList.toggle('sel')};kwBox.appendChild(c)});
+$('#kwCheck').onclick=()=>{let r=0,w=0;$$('#kwChips .chip').forEach(c=>{c.classList.remove('right','wrong');if(c.classList.contains('sel')){if(c.dataset.ok==='1'){c.classList.add('right');r++}else{c.classList.add('wrong');w++}}});
+ const fb=$('#kwFb');if(r===5&&w===0){fb.className='fb ok';fb.textContent='Керемет! Барлық тірек сөз дұрыс табылды.'}else{fb.className='fb bad';fb.textContent=`Дұрыс: ${r}/5. Қате таңдалғаны: ${w}. Мәтінді қайта тыңдаңыз.`}};
+const MI=[['Мағжан — Солтүстік Қазақстанда туған ақын.',0],['Мағжан Жұмабаев — халқына, жастарға сенген, өнері мәңгі жасайтын ұлы ақын.',1],['Мағжан көп қалада оқыған.',0],['Мағжан «Педагогика» кітабын жазған.',0]];
+$('#mainIdea').innerHTML=MI.map((m,i)=>`<label class="opt" data-ok="${m[1]}">${'АӘБВ'[i]}) ${m[0]}</label>`).join('');
+$$('#mainIdea .opt').forEach(o=>o.onclick=()=>{$$('#mainIdea .opt').forEach(x=>x.classList.remove('right','wrong'));
+ const ok=o.dataset.ok==='1';o.classList.add(ok?'right':'wrong');const fb=$('#miFb');
+ fb.className='fb '+(ok?'ok':'bad');fb.textContent=ok?'Дұрыс! Негізгі ой тақырып пен тірек сөздерді біріктіреді.':'Бұл — мәтіндегі жеке дерек қана, негізгі ой емес. Тақырыпқа назар аударыңыз: «Халқына сенген ақын».'});
+
+/* TASK 2 */
+const OPTS=['өз','ешкім','біреу','бәрі','ешқашан','кейбір','әрбір','әркімнің'];
+const TYPE={'өз':'өздік','ешкім':'болымсыздық','ешқашан':'болымсыздық','біреу':'белгісіздік','кейбір':'белгісіздік','бәрі':'жалпылау','әрбір':'жалпылау','әркімнің':'жалпылау'};
+const FILL=[
+ ['Ақын ___ халқының болашағына сенді.','өз'],
+ ['Мағжанның өлеңдерін ___ бей-жай оқи алмайды.','ешкім'],
+ ['Ақынның ___ шығармалары ұзақ жыл жарияланбады.','кейбір'],
+ ['Мағжан туған жерін ___ ұмытқан жоқ.','ешқашан'],
+ ['Сыныптағы оқушылардың ___ ақынның өлеңін жатқа айтты.','бәрі'],
+ ['Сабақта ___ «Түркістан» өлеңін мәнерлеп оқыды.','біреу'],
+ ['___ қазақ Мағжан есімін мақтан тұтады.','әрбір'],
+ ['Ақын жырлары ___ жүрегіне жол табады.','әркімнің']
+];
+function buildFill(){$('#fillBox').innerHTML=FILL.map((f,i)=>{const sel=`<select data-i="${i}"><option value="">— таңда —</option>${OPTS.map(o=>`<option>${o}</option>`).join('')}</select>`;
+ return `<div class="s">${i+1}. ${f[0].replace('___',sel)} <span class="t"></span></div>`}).join('');$('#fillFb').textContent=''}
+buildFill();
+$('#fillCheck').onclick=()=>{let r=0;$$('#fillBox select').forEach(s=>{const i=+s.dataset.i,ans=FILL[i][1],t=s.parentElement.querySelector('.t');
+ if(s.value===ans){r++;t.className='t ok';t.textContent='✔ '+TYPE[ans]+' есімдігі'}else{t.className='t bad';t.textContent=s.value?'✘ қайта ойлан':'✘ таңдалмады'}});
+ const fb=$('#fillFb');fb.className='fb '+(r===FILL.length?'ok':'bad');fb.textContent=`Нәтиже: ${r}/${FILL.length}. `+(r===FILL.length?'Өте жақсы!':r>=5?'Жақсы, қателерді түзетіңіз.':'Теорияны қайталап, қайта көріңіз.')};
+$('#fillReset').onclick=buildFill;
+
+/* TASK 3 — pronoun detector */
+const LEX={
+ ozd:w=>w==='өз'||/^өз(ім|ің|і|дер)/.test(w),
+ bol:w=>['ешкім','ештеңе','ешбір','ешқандай','ешқашан','ешқайда','ешнәрсе','ешқайсы','ешқалай'].some(p=>w.startsWith(p)),
+ bel:w=>['біреу','бірдеңе','бірнәрсе','бірнеше','кейбір','әлдекім','әлдене','әлдеқандай','әлдеқайда','әлдеқашан','әлдебір','әлденеше','қайсыбір'].some(p=>w.startsWith(p)),
+ zhal:w=>w==='әр'||['бәрі','бәрің','бәрім','бәрін','барлық','барша','бүкіл','күллі','әркім','әрбір','әрқайсы','әрқашан','әрдайым','әрнәрсе','түгел','тегіс'].some(p=>w.startsWith(p))
+};
+const NAMES={ozd:'өздік',bol:'болымсыздық',bel:'белгісіздік',zhal:'жалпылау'};
+function analyze(text){const c={ozd:0,bol:0,bel:0,zhal:0};
+ const html=text.replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])).replace(/[А-Яа-яЁёӘәҒғҚқҢңӨөҰұҮүҺһІі]+/g,word=>{const w=word.toLowerCase();
+  for(const k in LEX){if(LEX[k](w)){c[k]++;return `<mark title="${NAMES[k]}">${word}</mark>`}}return word});
+ return {c,html}}
+function updCounter(){const {c}=analyze($('#essay').value);$$('#counter div').forEach(d=>{const k=d.dataset.k;d.querySelector('b').textContent=c[k];d.classList.toggle('hit',c[k]>0)})}
+$('#essay').addEventListener('input',updCounter);
+$('#essayCheck').onclick=()=>{const t=$('#essay').value.trim();const {c,html}=analyze(t);
+ const sent=t.split(/[.!?…]+/).filter(s=>s.trim().split(/\s+/).length>=2).length;
+ const types=Object.values(c).filter(x=>x>0).length;const fb=$('#essayFb');
+ const m=$('#essayMarked');m.innerHTML=html.replace(/\n/g,'<br>');m.classList.toggle('show',!!t);
+ if(!t){fb.className='fb bad';fb.textContent='Алдымен мәтін жазыңыз.';return}
+ let msg=`Сөйлем саны: ${sent}. Қолданылған есімдік түрі: ${types}/4. `;
+ if(sent>=5&&types===4){fb.className='fb ok';msg+='Тамаша! Барлық критерий орындалды.'}
+ else{fb.className='fb bad';const miss=Object.keys(c).filter(k=>!c[k]).map(k=>NAMES[k]);msg+=(sent<5?'Сөйлемді 5-ке жеткізіңіз. ':'')+(miss.length?'Жетпейтіні: '+miss.join(', ')+' есімдігі.':'')}
+ fb.textContent=msg;updCounter()};
+$('#essaySample').onclick=()=>{$('#essay').value='Мағжан Жұмабаев өз халқын шексіз сүйген ақын. Ол жастарға сеніп, әрбір өлеңінде елдің болашағын жырлады. Ақынның кейбір шығармалары ұзақ жыл бойы жарияланбады. Бірақ шын өнерді ешкім өшіре алмады. Бүгінде Мағжан өлеңдерін барлық қазақ сүйіп оқиды. Біреу «Шолпанды», біреу «Батыр Баянды» жатқа айтады.';updCounter();$('#essayCheck').click()};
+
+/* GAME 1 — sort */
+const WORDS=[['өзім','ozd'],['өздері','ozd'],['өзіңіз','ozd'],['өзі','ozd'],['ешкім','bol'],['ештеңе','bol'],['ешқашан','bol'],['ешқандай','bol'],['біреу','bel'],['әлдекім','bel'],['кейбір','bel'],['бірнеше','bel'],['бәрі','zhal'],['барлық','zhal'],['әркім','zhal'],['бүкіл','zhal']];
+let picked=null;
+function buildSort(){picked=null;$('#bank').innerHTML='';$('#sortFb').textContent='';
+ $('#bins').innerHTML=Object.keys(NAMES).map(k=>`<div class="bin" data-k="${k}"><h4>${NAMES[k][0].toUpperCase()+NAMES[k].slice(1)}</h4><div class="chips"></div></div>`).join('');
+ shuffle(WORDS).forEach(([w,k])=>{const c=document.createElement('span');c.className='chip';c.textContent=w;c.dataset.k=k;
+  c.onclick=e=>{e.stopPropagation();if(c.parentElement.closest('.bin')){$('#bank').appendChild(c);c.classList.remove('right','wrong','sel');return}
+   $$('#bank .chip').forEach(x=>x.classList.remove('sel'));picked=c;c.classList.add('sel')};$('#bank').appendChild(c)});
+ $$('.bin').forEach(b=>b.onclick=()=>{if(!picked)return;picked.classList.remove('sel');b.querySelector('.chips').appendChild(picked);picked=null})}
+buildSort();
+$('#sortCheck').onclick=()=>{let r=0;$$('.bin').forEach(b=>b.querySelectorAll('.chip').forEach(c=>{const ok=c.dataset.k===b.dataset.k;c.classList.toggle('right',ok);c.classList.toggle('wrong',!ok);if(ok)r++}));
+ const left=$$('#bank .chip').length,fb=$('#sortFb');fb.className='fb '+(r===16?'ok':'bad');
+ fb.textContent=r===16?'Жарайсың! 16/16 — барлық есімдік өз себетінде!':`Дұрыс: ${r}/16.`+(left?` Әлі ${left} сөз қалды.`:'')+' Қызыл сөзді басып, қайта орналастырыңыз.'};
+$('#sortReset').onclick=buildSort;
+
+/* GAME 2 — quiz */
+const QZ=[
+ ['Мағжан Жұмабаев қай жылы туған?',['1885','1893','1901','1910'],1],
+ ['Ақынның тұңғыш өлеңдер жинағы қалай аталады?',['«Жан сөзі»','«Шолпан»','«Түркістан»','«Батыр Баян»'],1],
+ ['«Шолпан» жинағы қай қалада басылды?',['Қазан','Омбы','Ташкент','Алматы'],0],
+ ['Мағжан Уфадағы қай медреседе оқыды?',['«Расулия»','«Хусаиния»','«Ғалия»','«Мұхаммедия»'],2],
+ ['Мағжан қай саяси қозғалыстың қайраткері болды?',['Алаш','Үш жүз','Жас түріктер','Ақ жол'],0],
+ ['«Педагогика» еңбегі қай жылы жарық көрді?',['1912','1918','1922','1929'],2],
+ ['«Батыр Баян» поэмасы қай хан заманы туралы?',['Абылай хан','Кенесары хан','Тәуке хан','Әбілқайыр хан'],0],
+ ['Ақынның шығармалары халқына қай жылы толық оралды?',['1956','1960','1988','1991'],2]
+];
+let qi=0,qs=0;
+function renderQ(){const box=$('#quiz');$('#qzBar').style.width=(qi/QZ.length*100)+'%';
+ if(qi>=QZ.length){box.innerHTML=`<div style="text-align:center"><div class="serif" style="font-size:56px;color:var(--gold)">${qs}/${QZ.length}</div><p>${qs>=7?'Сіз — нағыз мағжантанушысыз!':qs>=5?'Жақсы нәтиже!':'Ақын өмірін қайта оқып шығыңыз.'}</p><button class="btn" id="qzR">Қайта ойнау</button></div>`;
+  $('#qzR').onclick=()=>{qi=0;qs=0;renderQ()};return}
+ const q=QZ[qi];box.innerHTML=`<p style="font-weight:600">${qi+1}. ${q[0]}</p>`+q[1].map((o,i)=>`<label class="opt" data-i="${i}">${o}</label>`).join('');
+ $$('#quiz .opt').forEach(o=>o.onclick=()=>{if(box.dataset.lock==='1')return;box.dataset.lock='1';const i=+o.dataset.i;
+  $$('#quiz .opt')[q[2]].classList.add('right');if(i===q[2])qs++;else o.classList.add('wrong');
+  setTimeout(()=>{box.dataset.lock='0';qi++;renderQ()},1100)})}
+renderQ();
+
+/* GAME 3 — timeline */
+const EV=[['Ақын дүниеге келді','1893'],['«Шолпан» жинағы басылды','1912'],['Омбы семинариясына оқуға түсті','1913'],['«Педагогика» оқулығы шықты','1922'],['«Батыр Баян» поэмасы жазылды','1923'],['Алғаш тұтқындалды','1929'],['Ақын атылды','1938']];
+const YRS=EV.map(e=>e[1]);
+$('#tlg').innerHTML=shuffle(EV).map(e=>`<div class="r" data-y="${e[1]}"><select><option value="">жыл</option>${YRS.slice().sort().map(y=>`<option>${y}</option>`).join('')}</select><span>${e[0]}</span></div>`).join('');
+$('#tlgCheck').onclick=()=>{let r=0;$$('#tlg .r').forEach(x=>{const ok=x.querySelector('select').value===x.dataset.y;x.classList.toggle('right',ok);x.classList.toggle('wrong',!ok);if(ok)r++});
+ const fb=$('#tlgFb');fb.className='fb '+(r===EV.length?'ok':'bad');fb.textContent=`Дұрыс: ${r}/${EV.length}`+(r===EV.length?' — Уақыт керуені мәреге жетті!':'')};
+
+/* IQ BOARD */
+const CATS=['Өмір жолы','Шығармалары','Есімдіктер','Ойлан, тап!'];
+const BQ=[
+ [['Мағжан Жұмабаев қай жылы, қай жерде туған?','1893 жылы 25 маусымда, Сасықкөл жағасында (Солтүстік Қазақстан).'],
+  ['Ақын Уфадағы қай медреседе оқыды? Онда кім сабақ берді?','«Ғалия» медресесі; ұстазы — Ғалымжан Ибрагимов.'],
+  ['1913–1917 жылдары ақын қай оқу орнында оқыды?','Омбы мұғалімдер семинариясында.']],
+ [['Ақынның тұңғыш жинағы қалай аталады?','«Шолпан» (1912, Қазан).'],
+  ['«Батыр Баян» қандай жанрдағы шығарма? Кімнің заманы суреттеледі?','Поэма; Абылай хан заманы.'],
+  ['Мағжанның 1922 жылы жарық көрген ғылыми еңбегі?','«Педагогика».']],
+ [['«Ешкім», «ешқашан» — есімдіктің қай түрі?','Болымсыздық есімдігі.'],
+  ['Белгісіздік есімдігін үш жолмен жасалуына қарай мысал келтіріңіз.','әлде- (әлдекім), бір- (біреу), кей- (кейбір).'],
+  ['«Әрбір» және «әр бала» неге әртүрлі жазылады? Қай түрге жатады?','«Әрбір» — біріккен сөз (бірге), «әр» зат есіммен бөлек жазылады; жалпылау есімдігі.']],
+ [['«Түркістан — екі дүние есігі ғой...» — кімнің өлеңі?','Мағжан Жұмабаевтың «Түркістан» өлеңі.'],
+  ['«Мен ... сенемін!» — ақын кімге сенді?','Жастарға! («Мен жастарға сенемін»).'],
+  ['Мағжанды неге «ақындардың ақыны» деп атайды? Ойыңызды дәлелдеңіз.','Қазақ өлеңіне жаңа ырғақ, бейне, нәзік сезім әкелді; тілі көркем, кейінгі ақындарға үлгі болды. (Еркін жауап)']]
+];
+const sc={A:0,B:0};let cur=null,tm=null;
+function buildBoard(){const b=$('#board');b.innerHTML=CATS.map(c=>`<div class="cat">${c}</div>`).join('');
+ for(let r=0;r<3;r++)for(let c=0;c<4;c++){const d=document.createElement('div');d.className='cell';d.textContent=(r+1)*10;d.onclick=()=>openQ(c,r,d);b.appendChild(d)}}
+function openQ(c,r,cell){cur={c,r,cell,pts:(r+1)*10};$('#mCat').textContent=CATS[c]+' · '+cur.pts+' ұпай';$('#mQ').textContent=BQ[c][r][0];$('#mA').textContent=BQ[c][r][1];
+ $('#mA').style.display='none';$('#mBtns1').style.display='flex';$('#mBtns2').style.display='none';$('#modal').classList.add('on');
+ let t=30;$('#mTimer').textContent=t;clearInterval(tm);tm=setInterval(()=>{t--;$('#mTimer').textContent=t;if(t<=0){clearInterval(tm);$('#mTimer').textContent='⏰'}},1000)}
+$('#mShow').onclick=()=>{clearInterval(tm);$('#mA').style.display='block';$('#mBtns1').style.display='none';$('#mBtns2').style.display='flex'};
+function closeQ(team){if(team){sc[team]+=cur.pts;$('#sc'+team).textContent=sc[team]}cur.cell.classList.add('used');$('#modal').classList.remove('on')}
+$('#mToA').onclick=()=>closeQ('A');$('#mToB').onclick=()=>closeQ('B');$('#mNone').onclick=()=>closeQ(null);
+$('#mToA').textContent='+ '+$('#tnA').value;$('#mToB').textContent='+ '+$('#tnB').value;
+$('#tnA').oninput=()=>$('#mToA').textContent='+ '+$('#tnA').value;$('#tnB').oninput=()=>$('#mToB').textContent='+ '+$('#tnB').value;
+$('#boardReset').onclick=()=>{sc.A=sc.B=0;$('#scA').textContent=0;$('#scB').textContent=0;buildBoard()};
+buildBoard();
+
+/* REFLECTION */
+let mood='';
+$$('#emo button').forEach(b=>b.onclick=()=>{$$('#emo button').forEach(x=>x.classList.remove('on'));b.classList.add('on');mood=b.innerText.replace(/\n/g,' ')+' — '+b.dataset.v});
+$('#reflBtn').onclick=()=>{const L=['Маған ұнағаны','Мен білдім','Қиын болғаны','Көңіл-күйім','Тағы білгім келеді'];
+ const v=[1,2,3,4,5].map(i=>$('#h'+i).value.trim());const o=$('#reflOut');o.style.display='block';
+ o.innerHTML=`<h3>Менің рефлексиям</h3>${mood?`<p><b style="color:var(--gold)">Көңіл-күй:</b> ${mood}</p>`:''}<ul>${v.map((x,i)=>x?`<li><b>${L[i]}:</b> ${x.replace(/[<>&]/g,'')}</li>`:'').join('')}</ul><p class="serif" style="font-size:22px;color:var(--gold-2);margin:8px 0 0">«Мен жастарға сенемін!» — Мағжан сізге де сенеді. Рақмет!</p>`};
+
+/* KMZH export */
+const fb=$('#dlFb');
+let dl=null;
+try{ if(window.claude&&window.claude.use){ window.claude.use('downloads').then(d=>{dl=d}).catch(()=>{}) } }catch(e){}
+function kmzhHTML(auto){const p=$('#paper').cloneNode(true);p.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));
+ return `<!DOCTYPE html><html lang="kk"><head><meta charset="UTF-8"><title>ҚМЖ — Мағжан Жұмабаев</title><style>
+ @page{size:A4;margin:12mm}body{font-family:"Times New Roman",Times,serif;font-size:12.5pt;color:#000;margin:0;padding:16px}
+ h2{text-align:center;font-size:16pt;margin:0 0 4px}.ctr{text-align:center;margin:0 0 10px}table{width:100%;border-collapse:collapse;margin-bottom:8px}
+ td,th{border:1px solid #000;padding:5px 6px;vertical-align:top;text-align:left}th{background:#e9eef8;text-align:center}.lab{width:28%;font-weight:bold;background:#f6f8fc}
+ .st{font-weight:bold}.sm{font-size:11pt}ul{margin:3px 0;padding-left:18px}p{margin:3px 0}tr{page-break-inside:avoid}
+ .pbtn{position:fixed;top:10px;right:10px;padding:10px 16px;font-size:14px;background:#0b1f52;color:#fff;border:0;border-radius:8px;cursor:pointer}
+ @media print{.pbtn{display:none}body{padding:0}th,.lab{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+ </style></head><body><button class="pbtn" onclick="window.print()">🖨 Басып шығару</button>${p.innerHTML}${auto?'<script>window.onload=function(){setTimeout(function(){window.print()},400)}<\/script>':''}</body></html>`}
+async function save(filename,data){
+  if(!dl){try{const b=data instanceof Blob?data:new Blob([data],{type:'text/html;charset=utf-8'});const u=URL.createObjectURL(b);
+    const a=document.createElement('a');a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);
+    fb.className='fb ok';fb.textContent='Файл жүктелді: '+filename}catch(e){fb.className='fb bad';fb.textContent='Файлды жүктеу мүмкін болмады.'}return}
+  try{await dl.save({filename,data});fb.className='fb ok';fb.textContent='Файл сақталды: '+filename}
+  catch(e){fb.className='fb bad';fb.textContent=e&&e.code==='declined'?'Жүктеу тоқтатылды.':'Файлды сақтау мүмкін болмады ('+(e&&e.code||'қате')+').'}
+}
+$('#dlHtml').onclick=()=>save('ҚМЖ_Мағжан_Жұмабаев.html',kmzhHTML(true));
+$('#dlPdf').onclick=async()=>{
+  if(typeof html2pdf==='undefined'){fb.className='fb bad';fb.textContent='PDF кітапханасы жүктелмеді — «.html» нұсқасын пайдаланыңыз.';return}
+  fb.className='fb';fb.textContent='PDF дайындалуда...';
+  const p=$('#paper');p.querySelectorAll('[contenteditable]').forEach(e=>e.classList.add('pdfclean'));
+  const css=document.createElement('style');css.textContent='.paper [contenteditable]{background:none!important;outline:none!important}.paper{box-shadow:none!important;border-radius:0!important}';document.head.appendChild(css);
+  try{
+    const blob=await html2pdf().set({margin:[8,7,8,7],image:{type:'jpeg',quality:.96},html2canvas:{scale:2,backgroundColor:'#ffffff',useCORS:true},
+      jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css','legacy'],avoid:['tr','p']}}).from(p).outputPdf('blob');
+    css.remove();await save('ҚМЖ_Мағжан_Жұмабаев.pdf',blob);
+  }catch(e){css.remove();fb.className='fb bad';fb.textContent='PDF жасау кезінде қате шықты — «.html» нұсқасын пайдаланыңыз.'}
+};
+$('#dlPrint').onclick=()=>{try{window.print()}catch(e){}
+  fb.className='fb';fb.textContent='Егер басып шығару терезесі ашылмаса, жоғарыдағы PDF немесе .html нұсқасын жүктеп, сол файлдан басып шығарыңыз.'};
+})();
+</script>
+</body>
+</html>
